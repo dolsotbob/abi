@@ -35,146 +35,93 @@ export const getContract = () => {
     throw new Error("X .env에 CONTRACT_ADDRESS가 없습니다.")
   }
 
-  const signer = getSigner();
-
-  return new ethers.Contract(contractAddress, abi, signer);
+  return new ethers.Contract(contractAddress, abi, getSigner());
 };
 
 export const positiveNumber = async () => {
   // Todo: positiveNumber 함수는 컨트랙트의 positiveNumber 값을 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.positiveNumber();
-  return value;
+  return await getContract().positiveNumber();
 };
 
 export const negativeNumber = async () => {
   // Todo: negativeNumber 함수는 컨트랙트의 negativeNumber 값을 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.negativeNumber();
-  return value;
+  return await getContract().negativeNumber();
 };
 
 export const isActive = async () => {
   // Todo: isActive 함수는 컨트랙트의 isActive 값을 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.isActive();
-  return value;
+  return await getContract().isActive();
 };
 
 export const wallet = async () => {
   // Todo: wallet 함수는 컨트랙트의 wallet 값을 리턴해야 합니다,
   // (나) 예를 들어 자선단체에서 기부금 받는 컨트랙트라면, 기부금을 받을 지갑(바뀔 수 있음)
-  const contract = getContract();
-
-  const value = await contract.wallet();
-  return value;
+  return await getContract().wallet();
 };
 
 export const recipient = async () => {
   // Todo: recipient 함수는 컨트랙트를 배포한 주소를 리턴해야 합니다.
   // (나) 예를 들어 자선단체에서 기부금 받는 컨트랙트라면, 컨트랙트를 만든 사람(운영자). 배포할 때 자기 주소를 recipient로 지정함. (안 바뀜)
-  const contract = getContract();
-
-  const value = await contract.recipient();
-  return value;
+  return await getContract().recipient();
 };
 
 export const fixedData = async () => {
   // Todo: fixedData 함수는 컨트랙트의 fixedData 값을 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.fixedData();
-  return value;
+  return await getContract().fixedData();
 };
 
 export const dynamicData = async () => {
   // Todo: fixedData 함수는 컨트랙트의 dynamicData 값을 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.dynamicData();
-  return value;
+  return await getContract().dynamicData();
 };
 
 export const currentState = async () => {
   // Todo: currentState 함수는 컨트랙트의 currentState 값을 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.currentState();
-  return value;
+  return await getContract().currentState();
 };
 
 export const getDynamicDataLength = async () => {
   // Todo: getDynamicDataLength 함수는 
   // 컨트랙트의 getDynamicDataLength 값을 리턴해야 합니다.
-  const contract = getContract();
-
-  const length = await contract.getDynamicDataLength();
-  return length;
+  return await getContract().getDynamicDataLength();
 };
 
 export const getDetails = async () => {
   // Todo: getDetails 함수는 컨트랙트의 getDetails 값을 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.getDetails();
-  return value;
+  return await getContract().getDetails();
 };
 
 export const setPositiveNumber = async (_positive: number) => {
   // Todo: setPositiveNumber 함수의 인자를 사용해 컨트랙트의 setPositiveNumber를 실행시켜 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.setPositiveNumber(_positive);
-  return value;
+  return await getContract().setPositiveNumber(_positive);
 };
 
 export const setNegativeNumber = async (_negative: number) => {
   // Todo: setNegativeNumber 함수의 인자를 사용해 컨트랙트의 setNegativeNumber를 실행시켜 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.setNegativeNumber(_negative);
-  return value;
+  return await getContract().setNegativeNumber(_negative);
 };
 
 export const toggleActive = async () => {
   // Todo: 컨트랙트의 toggleActive를 실행시켜 리턴해야 합니다.
-  const contract = getContract();
-
-  const value = await contract.toggleActive();
-  return value;
+  return await getContract().toggleActive();
 };
 
 export const setState = async (_newState: number) => {
   // Todo: setState 함수의 인자를 사용해 컨트랙트의 setState를 실행시켜 리턴해야 합니다.
-  const contract = getContract();
-
-  const currentState = await contract.setState(_newState);
-  return currentState;
+  return await getContract().setState(_newState);
 };
 
 export const setWallet = async (address: string) => {
   // Todo: setWallet 함수의 인자를 사용해 컨트랙트의 setWallet을 실행시켜 리턴해야 합니다.
-  const contract = getContract();
-
-  const newWallet = await contract.setWallet(address);
-  return newWallet;
+  return await getContract().setWallet(address);
 };
 
 export const setFixedData = async (_newFixedData: string) => {
   // Todo: setFixedData 함수의 인자를 사용해 컨트랙트의 setFixedData을 실행시켜 리턴해야 합니다.
-  const contract = getContract();
-
-  const newFixedData = await contract.setFixedData(_newFixedData);
-  return newFixedData;
+  return await getContract().setFixedData(_newFixedData);
 };
 
 export const setDynamicData = async (_newDynamicData: string) => {
   // Todo: setDynamicData 함수의 인자를 사용해 컨트랙트의 setDynamicData을 실행시켜 리턴해야 합니다.
-  const contract = getContract();
-
-  const newDynamicData = await contract.setDynamicData(_newDynamicData);
-  return newDynamicData;
+  return await getContract().setDynamicData(_newDynamicData);
 };
